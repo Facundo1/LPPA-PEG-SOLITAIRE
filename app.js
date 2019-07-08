@@ -15,8 +15,10 @@ for (let i = 0; i < initialState.length; i++) {
     dynamicBoard += '<li>';
 
     for (let j = 0; j < initialState[i].length; j++) {
-       dynamicBoard += '<button class= "ball-place"></button>';
-
+        if(initialState[i][j] !== undefined){
+            dynamicBoard += '<button class= "ball-place"></button>';
+        }
+      
     }
     dynamicBoard +='</li>';
 }

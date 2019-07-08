@@ -1,8 +1,10 @@
 body{
   margin: 50px;/*le agregeue margen porque si no la parte superior no se veia*/
-  background: rgba(333, 207, 206, 0.863);
+  background: rgb(116, 111, 111);
 }
+
 .ball-place{
+
     background-color: #015EBB;
     border: 2px solid #013D78;
     /*align-items: center;*/
@@ -11,5 +13,14 @@ body{
     border-radius: 20px;
     margin: 5px;
     box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
+  
+  }
+  .ball-place-empty{
+    background-color: rgb(207, 187, 187);
+    border: 2px solid #FFF;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    margin: 5px;
   
   }
