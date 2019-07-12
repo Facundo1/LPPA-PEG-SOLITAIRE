@@ -1,35 +1,99 @@
 body{
-  margin: 50px;/*le agregeue margen porque si no la parte superior no se veia*/
-  background: rgb(116, 111, 111);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #8b8a8a;
+}
+#container{
+  border: 7px #000066 solid;
 }
 
-.ball-place{
+#container h1{
+  text-align: center; 
+font-family: Arial Black; 
+font-weight: bold; font-size: 35px; 
+background: #202020; 
+-webkit-background-clip: text; 
+-moz-background-clip: text; 
+background-clip: text; 
+color: transparent; 
+text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
+}
+#container h3{
+  text-align: center; 
+font-family: Arial Black; 
+font-weight: bold; font-size: 35px; 
+background: #202020; 
+-webkit-background-clip: text; 
+-moz-background-clip: text; 
+background-clip: text; 
+color: transparent; 
+text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
+}
 
-    background-color: #015EBB;
-    border: 2px solid #013D78;
-    /*align-items: center;*/
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    margin: 5px;
-    box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65);
-  
+
+#header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: 	 #8b8a8a ;
+  padding-top: 15px;
+  margin: 10px 10px 0 10px;
+}
+
+#board{
+    background-color: #8b8a8a;
+    border-radius: 5px;
+    padding: 1vw;
+    margin-top: 3vh;
   }
-  .ball-place-empty{
-    background-color: rgb(207, 187, 187);
-    border: 2px solid #FFF;
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    margin: 5px;
-  
+  #board button{
+    width: 3vw;
+    height: 3vw;
+    margin: 1vw;
+    border: 1px solid #999;
+    border-radius: 50px;
   }
 
-  .no-ball{
-    background-color: rgb(116, 111, 111);
-    width: 20px;
-    height: 20px;
-    border-radius: 20px;
-    margin: 5px;
-    border: none;
+  #board button.hidden{
+    visibility: hidden;
+  }
+
+  #board button.peg{
+background-color: #0000aa;
+    }
+    #board button.peg:hover{
+background-color: #00000f;
+}
+
+#board button.peg:active{
+background-color: #000066;
+
+    }
+    #board button.hole{
+  background-color: #333333;
+    }
+    #board button.hole:hover{
+cursor: default;
+    }
+    #board button.selected{
+  background-color: #3b753b;
+}
+#board button.selected:active{
+  background-color: #368536;
+}
+
+#board button.suggestion{
+  background-color: rgb(122, 21, 21);
+}
+#footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:  #8b8a8a ;
+  padding-top: 15px;
+  
+  margin: 15px 10px 0 10px;
+  
   }
