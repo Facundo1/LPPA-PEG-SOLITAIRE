@@ -5,10 +5,28 @@ justify-content: center;
 align-items: center;
 background-color: #8b8a8a;
 }
-#container{
-  border: 7px #000066 solid;
-}
-
+#HorizontalMenu{
+  
+    position: fixed;
+    left: 30px;
+    top: 0;
+    margin-top: 50px;
+     
+  }
+  li {
+     display: inline;
+     }
+ li a {
+ font-family: Arial;
+ font-weight: bold; font-size: 35px; 
+ font-size: 20px;
+ text-decoration: none;
+ float: left;
+ padding: 15px;
+ background-color: #000000;
+ color: #fff;
+ }
+  
 #container h1{
   text-align: center; 
 font-family: Arial Black; 
@@ -62,6 +80,9 @@ text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px rgba(0,0,0,0.3);
 
   #board button.peg{
 background-color: #0000aa;
+border: 2px solid #013d78;
+border-radius: 50px;
+box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65) 
     }
     #board button.peg:hover{
 background-color: #00000f;
@@ -79,6 +100,9 @@ cursor: default;
     }
     #board button.selected{
   background-color: #3b753b;
+  border: 2px solid #295220;
+  border-radius: 50px;
+   box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65) 
 }
 #board button.selected:active{
   background-color: #368536;
@@ -86,6 +110,9 @@ cursor: default;
 
 #board button.suggestion{
   background-color: rgb(122, 21, 21);
+  border: 2px solid #5f1414;
+   box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65) 
+}
 }
 #footer{
   display: flex;
