@@ -243,11 +243,16 @@ var SavePegs = function () {
 var LoadPegs = function () {
   var LoadedBoard = document.getElementById('board');
   LoadedBoard.innerHTML = generateBoard(JSON.parse(localStorage.getItem('SaveFile')));
-  console.log(generateBoard(JSON.parse(localStorage.getItem('SaveFile'))))
+  console.log(JSON.parse(localStorage.getItem('SaveFile')))
 
   var balls = LoadedBoard.getElementsByTagName('button');
   AddPegsEventHandlers(balls);
  }
+
+ // Instructions
+var ShowInstructions = function(){
+  
+}
 
 // initialize game
 var init = function () {
@@ -262,6 +267,9 @@ var init = function () {
   SaveGame.onclick = SavePegs;
   var loadGame = document.getElementById("Load");
   loadGame.onclick = LoadPegs;
+  var Instructions = document.getElementById("HowToPlay")
+  console.log(Instructions);
+  //Instructions.onclick = location.href('Instructions.html');
 }
 
 window.onload = init;
