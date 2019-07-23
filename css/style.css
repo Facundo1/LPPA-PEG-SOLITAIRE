@@ -8,27 +8,22 @@ background-image: url(img/background.jpg);
 
 #ShowScores{
 display: flex;
-flex-direction: column;
+flex-direction: row;
 justify-content: center;
 align-items: center;
-position: fixed;
-right: 170px;
-top: 150px;
-width: 280px;
-height: 130px;
 }
 
 #Score{
  color: rgb(87, 49, 0);
 text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
-font: 50px 'ChunkFiveRegular';
-padding-bottom: 15px;
+font: 40px 'ChunkFiveRegular';
+margin-right: 20px;
 }
 
 #Pegs-Remaining{
 color: rgb(87, 49, 0);
 text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
-font: 50px 'ChunkFiveRegular';
+font: 40px 'ChunkFiveRegular';
 }
 
 #VerticalMenu{
@@ -64,7 +59,6 @@ width: 250px;
 height: 100%;
 }
 
-
 input[type="checkbox"]:checked ~ div#sidebar{
 display: block;
 }
@@ -74,7 +68,7 @@ color:rgb(87, 49  , 0);
 display: block;
 text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
 font: 80px 'ChunkFiveRegular';
-padding: 20px;
+padding: 10px;
 font-weight: 600;
 font-size: 45px;
 color:rgb(87, 49, 0);;
@@ -137,14 +131,14 @@ font: 35px 'ChunkFiveRegular';
 display: flex;
 flex-direction: column;
 align-items: center;
-padding-top: 15px;
-margin: 10px 10px 0 10px;
+padding-top: 30px;
+margin: 5px 5px 0 5px;
 }
 
 #board{
 border-radius: 5px;
 padding: 1vw;
-margin-top: 3vh;
+margin-top: -1vh;
 }
 
 #board button{
@@ -210,95 +204,54 @@ padding-top: 15px;
 margin: 15px 10px 0 10px;
 }
 
-@media (max-width: 300px) {
+@media (max-width: 300px){
   #board button {
-      visibility: hidden;
+  visibility: hidden;
   }
 }
 
-@media (min-width: 300px) {
-#ShowScores{
-right: -71px;
-top: 220px;
-}
-  #Score,#Pegs-Remaining{
-    font-size: 30px; 
-  }
+@media (min-width: 300px){
   #board button {
-      width: 21px;
-      height: 21px;
-      border-radius: 21px;
-      margin: 7px;
+  width: 21px;
+  height: 21px;
+  border-radius: 21px;
+  margin: 7px;
   }
 }
 
-@media (min-width: 600px) {
-  #ShowScores{
-    right: -71px;
-    top: 160px;
-    }
-      #Score,#Pegs-Remaining{
-        font-size: 30px; 
-      }
-
+@media (min-width: 600px){
   #board button {
-      width: 30px;
-      height: 30px;
-      border-radius: 30px;
-      margin: 10px;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  margin: 10px;
   }
 }
 
-@media (min-width: 900px) {
-  #ShowScores{
-    right: 24px;
-    top: 125px;
-    }
-      #Score,#Pegs-Remaining{
-        font-size: 40px; 
-      }
-
-  #board button {
-      width: 36px;
-      height: 36px;
-      border-radius: 36px;
-      margin: 12px;
+@media (min-width: 900px){
+   #board button {
+   width: 36px;
+   height: 36px;
+   border-radius: 36px;
+   margin: 12px;
   }
 }
 
-@media (min-width: 1200px) {
-
-  #ShowScores{
-    right: 24px;
-    top: 125px;
-    }
-      #Score,#Pegs-Remaining{
-        font-size: 50px; 
-      }
-
-  #board button {
-      width: 48px;
-      height: 48px;
-      border-radius: 48px;
-      margin: 16px;
+@media (min-width: 1200px){
+    #board button {
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    margin: 16px;
   }
 }
 
-@media (min-width: 1600px) {
-
-  #ShowScores{
-    right: 260px;
-    top: 125px;
-    }
-      #Score,#Pegs-Remaining{
-        font-size: 50px; 
-      }
-
-  #board button {
-      width: 48px;
-      height: 48px;
-      border-radius: 48px;
-      margin: 16px;
+@media (min-width: 1600px){
+    #board button {
+    width: 48px;
+    height: 48px;
+    border-radius: 48px;
+    margin: 16px;
   }
 }
 
