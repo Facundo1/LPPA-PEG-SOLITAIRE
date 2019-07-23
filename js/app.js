@@ -1,14 +1,3 @@
-//initializing array that represents a board
-var board = [
-  [, , { value: 1 }, { value: 1 }, { value: 1 }, ,],
-  [, , { value: 1 }, { value: 1 }, { value: 1 }, ,],
-  [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }],
-  [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 0 }, { value: 1 }, { value: 1 }, { value: 1 }],
-  [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }],
-  [, , { value: 1 }, { value: 1 }, { value: 1 }, ,],
-  [, , { value: 1 }, { value: 1 }, { value: 1 }, ,]
-]
-
 //Score
 var score = 0;
 var numberOfPegs = 32;
@@ -54,7 +43,7 @@ var generateRow = function (row, rowN) {
   return html;
 }
 
-var generateBoard = function () {
+var generateBoard = function (board) {
   var html = '';
   for (var i = 0; i < board.length; i++) {
     html += generateRow(board[i], i);
@@ -83,7 +72,52 @@ var HideRecommendation = function () {
     for (var i = 0; i < suggestions.length; i++) {
       suggestions[i].className = 'hole';
     }
-   
+  }
+}
+
+// Function to list move recommendations for a ball
+var searchRecommendations = function(myBall){
+  var suggestions = [];
+  var near = {
+    above:  getElement(createId(myBall.x-1,myBall.y)),
+    right:  getElement(createId(myBall.x,myBall.y+1)),
+    below:  getElement(createId(myBall.x+1,myBall.y)),
+    left:   getElement(createId(myBall.x,myBall.y-1))
+  }
+  var possible = {
+      above:  getElement(createId(myBall.x-2,myBall.y)),
+      right:  getElement(createId(myBall.x,myBall.y+2)),
+      below:  getElement(createId(myBall.x+2,myBall.y)),
+      left:   getElement(createId(myBall.x,myBall.y-2))
+  }
+  if (near.above.className === 'peg' && possible.above.className === 'hole') {
+    suggestions.push(possible.above)
+  }
+  if (near.right.className === 'peg' && possible.right.className === 'hole') {
+    suggestions.push(possible.right)
+  }
+  if (near.below.className === 'peg' && possible.below.className === 'hole') {
+    suggestions.push(possible.below)
+  }
+  if (near.left.className === 'peg' && possible.left.className === 'hole') {
+    suggestions.push(possible.left)
+  }
+  return suggestions;
+}
+
+//Function to count if there are any possible move
+var countRecommendations = function () {
+  var ballPlaces = document.getElementsByClassName('peg');
+  var Winner = document.getElementById("Winner")
+  for (var i = 0; i < ballPlaces.length; i++) {
+    var thisBall = getPositionFromId(ballPlaces[i].id);
+    var suggestions = searchRecommendations(thisBall);
+    if (suggestions.length > 0) {
+      return {};
+    }
+  }
+  if(Winner.textContent !== "YOU WON THE GAME"){
+    Winner.textContent = 'GAME OVER: NO MORE POSSIBLE MOVES.';
   }
 }
 
@@ -92,7 +126,6 @@ var choosePeg = function (evt) {
   var ball = evt.target;
   var ballClass = ball.className;
   unselectPeg();
-  HideRecommendation();
   HideRecommendation();
   if (ballClass === 'peg') {
     selectPeg(ball);
@@ -103,7 +136,7 @@ var choosePeg = function (evt) {
   }
   else if (ballClass === 'suggestion') {
     moveBall(ball);
- 
+   countRecommendations();
   }
 }
 
@@ -130,6 +163,7 @@ var moveBall = function (ball) {
   document.getElementById(middleBall).className = 'hole';
   selectedPeg.x = undefined;
   selectedPeg.y = undefined;
+  // Score and peg counter
   score += 100;
   RefreshScore.textContent = "SCORE" +" "+" "+" "+" "+ score;
   numberOfPegs = numberOfPegs - 1;
@@ -152,14 +186,12 @@ var showRecommendations = function () {
     right: getElement(createId(selectedPeg.x, selectedPeg.y + 1)),
     below: getElement(createId(selectedPeg.x + 1, selectedPeg.y)),
   }
-
   var possible = {
     above: getElement(createId(selectedPeg.x - 2, selectedPeg.y)),
     left: getElement(createId(selectedPeg.x, selectedPeg.y - 2)),
     right: getElement(createId(selectedPeg.x, selectedPeg.y + 2)),
     below: getElement(createId(selectedPeg.x + 2, selectedPeg.y)),
   }
-
   if (near.above.className === 'peg' && possible.above.className === 'hole') {
     possible.above.className = 'suggestion';
   }
@@ -173,55 +205,36 @@ var showRecommendations = function () {
     possible.below.className = 'suggestion';
   }
 }
-
 var thisBall = { x: undefined, y: undefined }
-
-var countRecommendations = function () {
-  var ballPlaces = document.getElementsByClassName('peg');
-  var Winner = document.getElementById("Winner")
-  for (var i = 0; i < ballPlaces.length; i++) {
-    var thisBall = getPositionFromId(ballPlaces[i].id);
-    console.log(thisBall);
-    var suggestions = showRecommendations(thisBall);
-    if (suggestions.length > 0) {
-    return{};
-    }
-    Winner.textContent = 'GAME OVER: NO MORE POSSIBLE MOVES.';
-  }
- 
-}
-
-
 var selectPeg = function (peg) {
- 
-  var idparts = getPositionFromId(peg.id)
-  selectedPeg.x = idparts.x
-  selectedPeg.y = idparts.y
-  peg.className = "selected";
-  showRecommendations(); 
-
+var idparts = getPositionFromId(peg.id)
+selectedPeg.x = idparts.x
+selectedPeg.y = idparts.y
+peg.className = "selected";
+showRecommendations(); 
 }
 
 var AddPegsEventHandlers = function (pegs) {
   for (var i = 0; i < pegs.length; i++) {
-    pegs[i].onclick = choosePeg;
+   pegs[i].onclick = choosePeg;
   }
 }
 
-//menu functions
+//MENU
 //reset
 var resetBoard = function () {
-  var Newboard = [
-    [, , { value: 1 }, { value: 1 }, { value: 1 }, ,],
-    [, , { value: 1 }, { value: 1 }, { value: 1 }, ,],
-    [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }],
-    [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 0 }, { value: 1 }, { value: 1 }, { value: 1 }],
-    [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }],
-    [, , { value: 1 }, { value: 1 }, { value: 1 }, ,],
-    [, , { value: 1 }, { value: 1 }, { value: 1 }, ,]
-  ]
+  //initializing array that represents a board
+var board = [
+  [, , { value: 1 }, { value: 1 }, { value: 1 }, ,,],
+  [, , { value: 1 }, { value: 1 }, { value: 1 }, ,,],
+  [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }],
+  [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 0 }, { value: 1 }, { value: 1 }, { value: 1 }],
+  [{ value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }, { value: 1 }],
+  [, , { value: 1 }, { value: 1 }, { value: 1 }, ,,],
+  [, , { value: 1 }, { value: 1 }, { value: 1 }, ,,]
+]
   var boardReseted = document.getElementById('board');
-  boardReseted.innerHTML = generateBoard(Newboard);
+  boardReseted.innerHTML = generateBoard(board);
   var Winner = document.getElementById("Winner");
   var Pegsss = boardReseted.getElementsByTagName('button');
   AddPegsEventHandlers(Pegsss);
@@ -235,7 +248,7 @@ var resetBoard = function () {
 }
 
 //Save game
-function BoardValues() {
+var BoardValues = function () {
   var currentBoard = [];
   var myBoard = document.getElementById('board');
   var myUls = myBoard.getElementsByTagName('ul');
@@ -251,17 +264,14 @@ function BoardValues() {
   }
   return currentBoard;
 }
-var SavePegs = function () {
-  localStorage.setItem('SaveFile', JSON.stringify(BoardValues()))
-  console.log(BoardValues());
+var SavePegs = function (){
+  localStorage.setItem('SaveFile', JSON.stringify(BoardValues()));
 }
 
 // Load Game
 var LoadPegs = function () {
   var LoadedBoard = document.getElementById('board');
   LoadedBoard.innerHTML = generateBoard(JSON.parse(localStorage.getItem('SaveFile')));
-  console.log(JSON.parse(localStorage.getItem('SaveFile')))
-
   var balls = LoadedBoard.getElementsByTagName('button');
   AddPegsEventHandlers(balls);
  }
@@ -273,42 +283,12 @@ var ShowInstructions = function(){
 }
 
 // Show Higscores and names
-
 var thisBall = {x: undefined, y: undefined}
-
-var countSuggestions = function(){
-  var ballPlaces = document.getElementsByClassName('ball-place');
-  var ballCounter = document.getElementById('ball-counter');
-  ballCounter.textContent = 'Peg Counter: ' + ballPlaces.length;
-  var gameState = document.getElementById('game-state');
-
-  if (ballPlaces.length === 1) {
-    var thisBall = createPosition(ballPlaces[0].id);
-    if (thisBall.x == 3 && thisBall.y == 3) {
-      gameState.textContent = 'Congrats, you won the game.';
-    }
-    else {
-      gameState.textContent = 'You almost did it. The last peg was not in the middle of the board.';
-    }
-  }
-  else {
-    gameState.textContent = '';
-    for (var i = 0; i < ballPlaces.length; i++) {
-      var thisBall = createPosition(ballPlaces[i].id);
-      var suggestions = searchSuggestions(thisBall);
-      if (suggestions.length > 0) {
-        return {};
-      }
-    }
-    gameState.textContent = 'Game over. There are no possible moves.';
-  }
-}
 
 // initialize game
 var init = function () {
   resetBoard();
   var boardElement = document.getElementById("board")
-  boardElement.innerHTML = generateBoard()
   var Pegs = boardElement.getElementsByTagName("button");
   AddPegsEventHandlers(Pegs)
   var newGame = document.getElementById('Reset');
@@ -325,5 +305,4 @@ var init = function () {
   var Counter = document.getElementById("Pegs-Remaining");
   Counter.textContent = "PEGS" +" "+" "+" "+" "+ numberOfPegs; 
 }
-
 window.onload = init;
