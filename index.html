@@ -22,8 +22,7 @@
         <li><button id="Save">SAVE</button></li>
         <li><button id="Load">LOAD</button></li>
         <li><button id="HowToPlay">INSTRUCTIONS</button></li>
-        <li><button id="ScorePoints">SCORE</button></li>
-        <li><button id="ScorePoints">ABOUT...</button></li>
+        <li><button id="About">CONTACT</button></li>
       </ul>
     </div>
   </div>
@@ -36,6 +35,22 @@
     <div id="ShowScores">
       <h5 id="Score">SCORE</h5>
       <h5 id="Pegs-Remaining">PEGS</h5>
+    </div>
+    <div id="ranking" class="display-none">
+      <div class="close-ranking">
+        <button id="close-ranking-button">X</button>
+      </div>
+      <h3 id="ranking-header">HEADER</h3>
+      <div id="user-data" class="display-block">
+        <form id="user-form" class="display-block">
+          <label for="username">NICKNAME:</label>
+          <input type="text" id="userName">
+        </form>
+        <button id="submit">Save!</button>
+      </div>
+      <div id="user-rank" class="display-none">
+        aqui el ranking
+      </div>
     </div>
     <div id="footer">
     </div>

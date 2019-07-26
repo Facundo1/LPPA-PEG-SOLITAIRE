@@ -14,7 +14,7 @@ align-items: center;
 }
 
 #Score{
- color: rgb(87, 49, 0);
+color: rgb(87, 49, 0);
 text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
 font: 40px 'ChunkFiveRegular';
 margin-right: 20px;
@@ -196,6 +196,75 @@ border: 2px solid #5f1414;
 box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65) 
 }
 
+#ranking{
+text-align: center;
+position: fixed;
+top:20%;
+left: 40%;
+width: 40%;
+margin-left: -10%;
+padding:10px;
+background-image: url(img/background.jpg);
+}
+
+.display-block{
+display: block;
+}
+
+.display-none{
+display: none;
+}
+
+.close-ranking{
+text-align: right;
+}
+
+#close-ranking-button{
+color: rgb(255, 255, 255);
+background: rgba(70, 46, 1, 0.986);
+border: 2px solid rgb(0, 0, 0);
+padding: 2px 20px 2px 20px;
+}
+
+#user-rank{
+height: 500px;
+background-image: url(img/background.jpg);
+margin-top: 10px;
+border: 5px solid #271801;
+}
+
+#user-rank ul{
+padding: 15px;
+}
+
+#user-rank ul li{
+padding:5px;
+background: #fff;
+font-size: x-large;
+font-weight: bold;
+}
+
+#user-rank ul li:nth-child(even){
+background: #AAA;
+}
+
+#userForm{
+text-align: center;
+padding: 10px;
+width: auto;
+margin:0 auto;
+}
+
+button#submit{
+width: 60%;
+margin: 5px;
+background: #3d330d;
+padding: 5px;
+border-radius: 5px;
+border: 0px;
+color: #fff;
+}
+
 #footer{
 display: flex;
 flex-direction: column;
@@ -205,59 +274,52 @@ margin: 15px 10px 0 10px;
 }
 
 @media (max-width: 300px){
-  #board button {
-  visibility: hidden;
-  }
+#board button {
+visibility: hidden;
+}
 }
 
 @media (min-width: 300px){
-  #board button {
-  width: 21px;
-  height: 21px;
-  border-radius: 21px;
-  margin: 7px;
-  }
+#board button {
+width: 21px;
+height: 21px;
+border-radius: 21px;
+margin: 7px;
+}
 }
 
 @media (min-width: 600px){
-  #board button {
-  width: 30px;
-  height: 30px;
-  border-radius: 30px;
-  margin: 10px;
-  }
+#board button {
+width: 30px;
+height: 30px;
+border-radius: 30px;
+margin: 10px;
+}
 }
 
 @media (min-width: 900px){
-   #board button {
-   width: 36px;
-   height: 36px;
-   border-radius: 36px;
-   margin: 12px;
-  }
+#board button {
+width: 36px;
+height: 36px;
+border-radius: 36px;
+margin: 12px;
+}
 }
 
 @media (min-width: 1200px){
-    #board button {
-    width: 48px;
-    height: 48px;
-    border-radius: 48px;
-    margin: 16px;
-  }
+#board button {
+width: 48px;
+height: 48px;
+border-radius: 48px;
+margin: 16px;
+}
 }
 
 @media (min-width: 1600px){
-    #board button {
-    width: 48px;
-    height: 48px;
-    border-radius: 48px;
-    margin: 16px;
-  }
+#board button {
+width: 48px;
+height: 48px;
+border-radius: 48px;
+margin: 16px;
 }
-
-
-
-
-
-
-
+}
