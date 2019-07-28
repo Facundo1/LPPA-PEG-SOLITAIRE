@@ -2,7 +2,6 @@
 var score;
 var numberOfPegs;
 
-
 //Object of Peg
 var selectedPeg = { x: undefined, y: undefined };
 
@@ -236,8 +235,7 @@ var AddPegsEventHandlers = function (pegs) {
 
 //reset
 var resetBoard = function () {
- 
-//initializing array that represents a board
+ //initializing array that represents a board
 var board = [
   [, , { value: 1 }, { value: 1 }, { value: 1 }, ,,],
   [, , { value: 1 }, { value: 1 }, { value: 1 }, ,,],
@@ -308,6 +306,21 @@ var ShowInstructions = function(){
   document.location.href = "Instructions.html";
 }
 
+// HighScores
+var viewRanking = function(){
+  var rankingDiv = getElement('ranking');
+  rankingDiv.className = "diplay-block"
+  var header = getElement('ranking-header');
+  header.innerText = 'RANKING';
+  var userData = getElement('user-data');
+  userData.className = 'display-none';
+  var userRank = getElement('user-rank');  
+  userRank.className = 'display-block';
+  var close = getElement('close-ranking-button');
+  close.onclick = closeRankingDiv;
+  userRank.innerHTML = usersPoints();
+} 
+
 //Show About
 var ShowAbout = function(){
   document.location.target ="_blank";
@@ -320,7 +333,6 @@ var closeRankingDiv = function(){
    rankingDiv.className = 'display-none';
    var ListPlayers = getElement('user-rank')
    ListPlayers.className = 'display-none';
-
 }
 
 //Function to get date
@@ -385,7 +397,7 @@ var savePoints = function (userName) {
 }
 
 var usersPoints = function(){
-  //Creating the elements wich will represent the ranking of players
+  //Getting the array wich will represent the ranking of players
   localStorage.getItem('RankingPlayer');
   var RankingPlayer = JSON.parse(localStorage.getItem('RankingPlayer'));
 
@@ -462,6 +474,8 @@ var init = function () {
   PutScore.textContent = "SCORE" +" "+" "+" "+" "+ score;
   var Counter = document.getElementById("Pegs-Remaining");
   Counter.textContent = "PEGS" +" "+" "+" "+" "+ numberOfPegs; 
+  var High = document.getElementById("HighScores");
+  High.onclick = viewRanking;
 }
 
 window.onload = init;
