@@ -1,9 +1,7 @@
 //Score
-var score = 0;
-var numberOfPegs = 32;
-var currentScore;
-var currentPegs;
-var CurrentInfo = [currentScore,currentPegs];
+var score;
+var numberOfPegs;
+
 
 //Object of Peg
 var selectedPeg = { x: undefined, y: undefined };
@@ -123,7 +121,7 @@ var countRecommendations = function () {
   }
   if(Winner.textContent !== "YOU WON THE GAME"){
     Winner.textContent = 'GAME OVER: NO MORE POSSIBLE MOVES.';
-    showRankingDiv(true,"YOUR SCORE"+" "+ currentScore);
+    showRankingDiv(true,"YOUR SCORE"+" "+ score);
   }
 }
 
@@ -176,17 +174,17 @@ var moveBall = function (ball) {
   RefreshScore.textContent = "SCORE" +" "+" "+" "+" "+ score;
   numberOfPegs = numberOfPegs - 1;
   Counter.textContent = "PEGS" +" "+" "+" "+" "+ numberOfPegs; 
-  currentScore = score;
-  currentPegs = numberOfPegs;
+  //currentScore = score;
+  //currentPegs = numberOfPegs;
 
   if (numberOfPegs === 1) {
     if (id.x == 3 && id.y == 3){
       Winner.textContent = "YOU WON THE GAME";
-      showRankingDiv(true,"YOUR SCORE"+" "+ currentScore);
+      showRankingDiv(true,"YOUR SCORE"+" "+ score);
     }
     else{
       Winner.textContent = "GAME OVER:THE LAST BALL IS NOT IN THE CENTER "
-      showRankingDiv(true,"YOUR SCORE"+" "+ currentScore);
+      showRankingDiv(true,"YOUR SCORE"+" "+ score);
     }
   }
 }
@@ -268,8 +266,7 @@ var BoardValues = function () {
   var currentBoard = [];
   var myBoard = document.getElementById('board');
   var myUls = myBoard.getElementsByTagName('ul');
-  CurrentInfo = [currentScore,currentPegs];
-  console.log(CurrentInfo);
+ 
   for (var i = 0; i < myUls.length; i++) {
     var myUl = [];
     var myButtons = myUls[i].getElementsByTagName('button');
@@ -285,7 +282,7 @@ var BoardValues = function () {
 
 var SavePegs = function (){
   //Saving an object of name "game" with the attributes : board,score and number of pegs 
-  var game = {board:BoardValues(),Score:currentScore,Pegs:currentPegs};
+  var game = {board:BoardValues(),Score:score,Pegs:numberOfPegs};
   localStorage.setItem('SaveFile', JSON.stringify(game));
 } 
 
@@ -299,6 +296,9 @@ var LoadPegs = function () {
   var LoadedPegs = document.getElementById("Pegs-Remaining");
   LoadedPegs.textContent = "PEGS" +" "+" "+" "+" "+ SavedGame.Pegs; 
    var balls = LoadedBoard.getElementsByTagName('button');
+   var Pegis = LoadedBoard.getElementsByClassName('peg');
+   score = parseInt(SavedGame.Score);
+   numberOfPegs = SavedGame.Pegs;
   AddPegsEventHandlers(balls);
  }
 
@@ -318,7 +318,9 @@ var ShowAbout = function(){
 var closeRankingDiv = function(){
    var rankingDiv = getElement('ranking');
    rankingDiv.className = 'display-none';
-   resetBoard();
+   var ListPlayers = getElement('user-rank')
+   ListPlayers.className = 'display-none';
+
 }
 
 //Function to get date
@@ -353,22 +355,22 @@ function getDate() {
 
 //Saving players skills
 var savePoints = function (userName) {
-  var points = currentScore;
+  var points = score;
   var DateToday = getDate();
   var userRank = document.getElementById('user-rank');
  
   //validations
   if (userName == "") {
      alert("Debes ingresar tu nickname");
-     return;
+     return {};
   }
   if(userName.length < 3){
     alert("El nombre debe tener mas de tres caracteres");
-     return;
+     return {};
   }
   if (userName.length > 12) {
     alert("El nombre debe tener menos de doce caracteres");
-     return;
+     return {};
   }
   //Creating an array which will contain: username, points in game and date
   if (!localStorage.getItem('RankingPlayer')) {
@@ -376,6 +378,9 @@ var savePoints = function (userName) {
   }
   var RankingPlayer = JSON.parse(localStorage.getItem('RankingPlayer'));
   RankingPlayer.push({ date: DateToday.toString(),userName: userName, points: points });
+  if (RankingPlayer.length >15) {
+    RankingPlayer.length = 15;
+  }
   localStorage.setItem('RankingPlayer', JSON.stringify(RankingPlayer));
 }
 
@@ -414,6 +419,7 @@ var formEvents = function (evt) {
   userData.className = 'display-none';
   var userRank = document.getElementById('user-rank');
   userRank.className = 'display-block';
+  document.getElementById('userName').value = "";
   userRank.innerHTML = usersPoints();
 }
 
@@ -422,9 +428,12 @@ var showRankingDiv = function (bool, message = '') {
   var close = getElement('close-ranking-button');
     close.onclick = closeRankingDiv;
     var rankingDiv = getElement('ranking');
+    var userData = getElement('user-data');
+   
     var header = getElement('ranking-header');
     header.innerText = message;
     if (bool) {
+        userData.className = 'display-block';
         rankingDiv.className = 'display-block';
         var submit = document.getElementById('submit');
         submit.onclick = formEvents;
