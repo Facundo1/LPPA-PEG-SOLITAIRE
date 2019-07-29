@@ -1,6 +1,4 @@
 //Open Email Client
-
-
 var init = function(){
     var Submit = document.getElementById("ButtonSubmit");
     Submit.onclick = SendEmail;
