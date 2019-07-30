@@ -110,7 +110,7 @@ var searchRecommendations = function(myBall){
 //Function to count if there are any possible move
 var countRecommendations = function () {
   var ballPlaces = document.getElementsByClassName('peg');
-  var Winner = document.getElementById("Winner")
+  var Winner = document.getElementById("winner")
   for (var i = 0; i < ballPlaces.length; i++) {
     var thisBall = getPositionFromId(ballPlaces[i].id);
     var suggestions = searchRecommendations(thisBall);
@@ -148,9 +148,9 @@ var choosePeg = function (evt) {
 var moveBall = function (ball) {
   ball.className = 'peg';
   var prevSelectedId = createId(selectedPeg.x, selectedPeg.y);
-  var RefreshScore = document.getElementById("Score");
-  var Winner = document.getElementById("Winner");
-  var Counter = document.getElementById("Pegs-Remaining");
+  var RefreshScore = document.getElementById("score");
+  var Winner = document.getElementById("winner");
+  var Counter = document.getElementById("pegs-remaining");
   document.getElementById(prevSelectedId).className = 'hole';
   var id = getPositionFromId(ball.id)
   if (id.x > selectedPeg.x) {
@@ -247,14 +247,14 @@ var board = [
 ]
   var boardReseted = document.getElementById('board');
   boardReseted.innerHTML = generateBoard(board);
-  var Winner = document.getElementById("Winner");
+  var Winner = document.getElementById("winner");
   var Pegsss = boardReseted.getElementsByTagName('button');
   AddPegsEventHandlers(Pegsss);
   score = 0;
-  var PutScore = document.getElementById("Score");
+  var PutScore = document.getElementById("score");
   PutScore.textContent = "SCORE" +" "+" "+" "+" "+ score;
   numberOfPegs = 32;
-  var Counter = document.getElementById("Pegs-Remaining");
+  var Counter = document.getElementById("pegs-remaining");
   Counter.textContent = "PEGS" +" "+" "+" "+" "+ numberOfPegs; 
   Winner.textContent = "PEG SOLITAIRE";
 }
@@ -281,17 +281,17 @@ var BoardValues = function () {
 var SavePegs = function (){
   //Saving an object of name "game" with the attributes : board,score and number of pegs 
   var game = {board:BoardValues(),Score:score,Pegs:numberOfPegs};
-  localStorage.setItem('SaveFile', JSON.stringify(game));
+  localStorage.setItem('savefile', JSON.stringify(game));
 } 
 
 // Load Game
 var LoadPegs = function () {
-  var SavedGame = JSON.parse(localStorage.getItem('SaveFile'));
+  var SavedGame = JSON.parse(localStorage.getItem('savefile'));
   var LoadedBoard = document.getElementById('board');
   LoadedBoard.innerHTML = generateBoard(SavedGame.board);
-  var LoadedScore = document.getElementById("Score");
+  var LoadedScore = document.getElementById("score");
   LoadedScore.textContent = "SCORE" +" "+" "+" "+" "+ SavedGame.Score;
-  var LoadedPegs = document.getElementById("Pegs-Remaining");
+  var LoadedPegs = document.getElementById("pegs-remaining");
   LoadedPegs.textContent = "PEGS" +" "+" "+" "+" "+ SavedGame.Pegs; 
    var balls = LoadedBoard.getElementsByTagName('button');
    var Pegis = LoadedBoard.getElementsByClassName('peg');
@@ -303,7 +303,7 @@ var LoadPegs = function () {
  // Instructions
 var ShowInstructions = function(){
   document.location.target ="_blank";
-  document.location.href = "Instructions.html";
+  document.location.href = "game-instructions.html";
 }
 
 // HighScores
@@ -324,7 +324,7 @@ var viewRanking = function(){
 //Show About
 var ShowAbout = function(){
   document.location.target ="_blank";
-  document.location.href = "About.html";
+  document.location.href = "show-about.html";
 }
 
 // Show Higscores and names
@@ -399,9 +399,9 @@ var savePoints = function (userName) {
 var usersPoints = function(){
   //Getting the array wich will represent the ranking of players
   localStorage.getItem('RankingPlayer');
-  var RankingPlayer = JSON.parse(localStorage.getItem('RankingPlayer'));
+  var rankingPlayer = JSON.parse(localStorage.getItem('RankingPlayer'));
 
-  RankingPlayer.sort(
+  rankingPlayer.sort(
     function (a, b) {
         if (a.points > b.points) {
             return -1;
@@ -414,8 +414,8 @@ var usersPoints = function(){
 );
 
   var listHTML = "<ul>"
-  for (let i = 0; i < RankingPlayer.length; i++) {
-      listHTML += "<li> " + (i + 1) + '.' + '[' + RankingPlayer[i].date + ']' +'   '+ RankingPlayer[i].userName + '   ' + RankingPlayer[i].points + " </li>"
+  for (let i = 0; i < rankingPlayer.length; i++) {
+      listHTML += "<li> " + (i + 1) + '.' + '[' + rankingPlayer[i].date + ']' +'   '+ rankingPlayer[i].userName + '   ' + rankingPlayer[i].points + " </li>"
   }
   listHTML += "</ul>";
   return listHTML;
@@ -460,21 +460,21 @@ var init = function () {
   var boardElement = document.getElementById("board")
   var Pegs = boardElement.getElementsByTagName("button");
   AddPegsEventHandlers(Pegs)
-  var newGame = document.getElementById('Reset');
+  var newGame = document.getElementById('reset');
   newGame.onclick = resetBoard;
-  var SaveGame = document.getElementById("Save");
+  var SaveGame = document.getElementById("save");
   SaveGame.onclick = SavePegs;
-  var loadGame = document.getElementById("Load");
+  var loadGame = document.getElementById("load");
   loadGame.onclick = LoadPegs;
-  var Instructions = document.getElementById("HowToPlay");
+  var Instructions = document.getElementById("howtoplay");
   Instructions.onclick = ShowInstructions;
-  var Aboutt = document.getElementById("About");
+  var Aboutt = document.getElementById("about");
   Aboutt.onclick = ShowAbout;
-  var PutScore = document.getElementById("Score");
+  var PutScore = document.getElementById("score");
   PutScore.textContent = "SCORE" +" "+" "+" "+" "+ score;
-  var Counter = document.getElementById("Pegs-Remaining");
+  var Counter = document.getElementById("pegs-remaining");
   Counter.textContent = "PEGS" +" "+" "+" "+" "+ numberOfPegs; 
-  var High = document.getElementById("HighScores");
+  var High = document.getElementById("highscores");
   High.onclick = viewRanking;
 }
 
