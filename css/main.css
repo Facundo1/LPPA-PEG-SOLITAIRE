@@ -22,6 +22,26 @@ input[type="checkbox"]:checked ~ div#sidebar {
     display: block;
 }
 
+img {
+    width: 40px;
+}
+
+label img {
+    padding: 15px;
+    position: absolute;
+}
+    
+label img:hover {
+    padding: 15px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+    
+label {
+    z-index: 1;
+}
+
 #sidebar {
     display: none;
     margin-top: 100px;
@@ -29,19 +49,10 @@ input[type="checkbox"]:checked ~ div#sidebar {
     width: 250px;
     height: 100%;
 }
-
-a {
-    text-decoration: none;
-    color: black;
-}
     
 ul {
     list-style: none;
-}
-    
-img {
-    width: 40px;
-}
+}  
     
 li button {
     color:rgb(87, 49  , 0);
@@ -70,27 +81,25 @@ li button:hover {
     border-radius: 6px;
     border: none;
 }
-    
-label img {
-    padding: 15px;
-    position: absolute;
-}
-    
-label img:hover {
-    padding: 15px;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-}
-    
-label {
-    z-index: 1;
-}
 
 #container {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#container h1 {
+    text-align: center; 
+    color: rgb(87, 49, 0);
+    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
+    font: 65px 'ChunkFiveRegular';
+}
+
+#container h3 {
+    text-align: center; 
+    color: rgb(87, 49, 0);
+    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
+    font: 35px 'ChunkFiveRegular';
 }
 
 #header {
@@ -107,37 +116,6 @@ label {
     justify-content: center;
     align-items: center;
 }
-
-#score{
-    color: rgb(87, 49, 0);
-    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
-    font: 40px 'ChunkFiveRegular';
-    margin-right: 20px;
-}
-
-#pegs-remaining{
-    color: rgb(87, 49, 0);
-    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
-    font: 40px 'ChunkFiveRegular';
-}
-
-
- 
-#container h1 {
-    text-align: center; 
-    color: rgb(87, 49, 0);
-    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
-    font: 65px 'ChunkFiveRegular';
-}
-
-#container h3 {
-    text-align: center; 
-    color: rgb(87, 49, 0);
-    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
-    font: 35px 'ChunkFiveRegular';
-}
-
-
 
 #board {
     border-radius: 5px;
@@ -198,6 +176,19 @@ label {
     background-color: rgb(122, 21, 21);
     border: 2px solid #5f1414;
     box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65) 
+}
+
+#score{
+    color: rgb(87, 49, 0);
+    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
+    font: 40px 'ChunkFiveRegular';
+    margin-right: 20px;
+}
+
+#pegs-remaining{
+    color: rgb(87, 49, 0);
+    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
+    font: 40px 'ChunkFiveRegular';
 }
 
 #ranking {
