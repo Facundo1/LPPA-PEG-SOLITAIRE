@@ -1,12 +1,12 @@
 //Open Email Client
 var init = function(){
-    var Submit = document.getElementById("buttonsubmit");
-    Submit.onclick = SendEmail;
+    var submit = document.getElementById("buttonsubmit");
+    submit.onclick = sendEmail;
 }
 
-var SendEmail = function(){
-    var Subj = document.getElementById("name").value;
+var sendEmail = function(){
+    var subj = document.getElementById("name").value;
     var msg = document.getElementById("msg").value;
-    window.open('mailto:facundosa123@gmail.com?subject='+Subj+'&body='+msg);
+    window.open('mailto:facundosa123@gmail.com?subject='+subj+'&body='+msg);
 }
 window.onload = init;
