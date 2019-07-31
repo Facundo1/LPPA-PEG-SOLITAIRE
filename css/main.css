@@ -250,7 +250,12 @@ li button:hover {
     margin:0 auto;
 }
 
-button#submit {
+#nickuser {
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+#submit {
     width: 60%;
     margin: 5px;
     background: #3d330d;

@@ -41,7 +41,7 @@ var generateRow = function (row, rowN) {
   for (var j = 0; j < row.length; j++) {
     html += generateCell(row[j], rowN, j)
   }
-  html += "</ul>";
+  html += '</ul>';
   return html;
 }
 
@@ -110,7 +110,7 @@ var searchRecommendations = function(myBall){
 //Function to count if there are any possible move
 var countRecommendations = function () {
   var ballPlaces = document.getElementsByClassName('peg');
-  var Winner = document.getElementById("winner")
+  var Winner = document.getElementById('winner')
   for (var i = 0; i < ballPlaces.length; i++) {
     var thisBall = getPositionFromId(ballPlaces[i].id);
     var suggestions = searchRecommendations(thisBall);
@@ -118,9 +118,9 @@ var countRecommendations = function () {
       return {};
     }
   }
-  if(Winner.textContent !== "YOU WON THE GAME"){
+  if(Winner.textContent !== 'YOU WON THE GAME'){
     Winner.textContent = 'GAME OVER: NO MORE POSSIBLE MOVES.';
-    showRankingDiv(true,"YOUR SCORE"+" "+ score);
+    showRankingDiv(true,'YOUR SCORE'+' '+ score);
   }
 }
 
@@ -148,9 +148,9 @@ var choosePeg = function (evt) {
 var moveBall = function (ball) {
   ball.className = 'peg';
   var prevSelectedId = createId(selectedPeg.x, selectedPeg.y);
-  var RefreshScore = document.getElementById("score");
-  var Winner = document.getElementById("winner");
-  var Counter = document.getElementById("pegs-remaining");
+  var RefreshScore = document.getElementById('score');
+  var Winner = document.getElementById('winner');
+  var Counter = document.getElementById('pegs-remaining');
   document.getElementById(prevSelectedId).className = 'hole';
   var id = getPositionFromId(ball.id)
   if (id.x > selectedPeg.x) {
@@ -170,20 +170,20 @@ var moveBall = function (ball) {
   selectedPeg.y = undefined;
   // Score and peg counter
   score += 100;
-  RefreshScore.textContent = "SCORE" +" "+" "+" "+" "+ score;
+  RefreshScore.textContent = 'SCORE' +'  '+ score;
   numberOfPegs = numberOfPegs - 1;
-  Counter.textContent = "PEGS" +" "+" "+" "+" "+ numberOfPegs; 
+  Counter.textContent = 'PEGS' +'  '+ numberOfPegs; 
   //currentScore = score;
   //currentPegs = numberOfPegs;
 
   if (numberOfPegs === 1) {
     if (id.x == 3 && id.y == 3){
-      Winner.textContent = "YOU WON THE GAME";
-      showRankingDiv(true,"YOUR SCORE"+" "+ score);
+      Winner.textContent = 'YOU WON THE GAME';
+      showRankingDiv(true,'YOUR SCORE'+' '+ score);
     }
     else{
-      Winner.textContent = "GAME OVER:THE LAST BALL IS NOT IN THE CENTER "
-      showRankingDiv(true,"YOUR SCORE"+" "+ score);
+      Winner.textContent = 'GAME OVER:THE LAST BALL IS NOT IN THE CENTER '
+      showRankingDiv(true,'YOUR SCORE'+' '+ score);
     }
   }
 }
@@ -220,7 +220,7 @@ var selectPeg = function (peg) {
 var idparts = getPositionFromId(peg.id)
 selectedPeg.x = idparts.x
 selectedPeg.y = idparts.y
-peg.className = "selected";
+peg.className = 'selected';
 showRecommendations(); 
 }
 
@@ -247,16 +247,16 @@ var board = [
 ]
   var boardReseted = document.getElementById('board');
   boardReseted.innerHTML = generateBoard(board);
-  var Winner = document.getElementById("winner");
+  var Winner = document.getElementById('winner');
   var Pegsss = boardReseted.getElementsByTagName('button');
   AddPegsEventHandlers(Pegsss);
   score = 0;
-  var PutScore = document.getElementById("score");
-  PutScore.textContent = "SCORE" +" "+" "+" "+" "+ score;
+  var PutScore = document.getElementById('score');
+  PutScore.textContent = 'SCORE' +'  '+ score;
   numberOfPegs = 32;
-  var Counter = document.getElementById("pegs-remaining");
-  Counter.textContent = "PEGS" +" "+" "+" "+" "+ numberOfPegs; 
-  Winner.textContent = "PEG SOLITAIRE";
+  var Counter = document.getElementById('pegs-remaining');
+  Counter.textContent = 'PEGS' +'  '+ numberOfPegs; 
+  Winner.textContent = 'PEG SOLITAIRE';
 }
 
 //Save game
@@ -289,10 +289,10 @@ var LoadPegs = function () {
   var SavedGame = JSON.parse(localStorage.getItem('savefile'));
   var LoadedBoard = document.getElementById('board');
   LoadedBoard.innerHTML = generateBoard(SavedGame.board);
-  var LoadedScore = document.getElementById("score");
-  LoadedScore.textContent = "SCORE" +" "+" "+" "+" "+ SavedGame.Score;
-  var LoadedPegs = document.getElementById("pegs-remaining");
-  LoadedPegs.textContent = "PEGS" +" "+" "+" "+" "+ SavedGame.Pegs; 
+  var LoadedScore = document.getElementById('score');
+  LoadedScore.textContent = 'SCORE' +'  '+ SavedGame.Score;
+  var LoadedPegs = document.getElementById('pegs-remaining');
+  LoadedPegs.textContent = 'PEGS' +' '+ SavedGame.Pegs; 
    var balls = LoadedBoard.getElementsByTagName('button');
    var Pegis = LoadedBoard.getElementsByClassName('peg');
    score = parseInt(SavedGame.Score);
@@ -302,14 +302,14 @@ var LoadPegs = function () {
 
  // Instructions
 var ShowInstructions = function(){
-  document.location.target ="_blank";
-  document.location.href = "game-instructions.html";
+  document.location.target ='_blank';
+  document.location.href = 'game-instructions.html';
 }
 
 // HighScores
 var viewRanking = function(){
   var rankingDiv = getElement('ranking');
-  rankingDiv.className = "diplay-block"
+  rankingDiv.className = 'diplay-block'
   var header = getElement('ranking-header');
   header.innerText = 'RANKING';
   var userData = getElement('user-data');
@@ -323,8 +323,8 @@ var viewRanking = function(){
 
 //Show About
 var ShowAbout = function(){
-  document.location.target ="_blank";
-  document.location.href = "show-about.html";
+  document.location.target ='_blank';
+  document.location.href = 'show-about.html';
 }
 
 // Show Higscores and names
@@ -343,24 +343,24 @@ function getDate() {
   var mm = (date.getMonth() + 1)
   //Puts the 0 for the numbers below 2 digits
   if (dd < 10) {
-      dd = "0" + dd
+      dd = '0' + dd
   }
   if (mm < 10) {
-      mm = "0" + mm
+      mm = '0' + mm
   }
-  var currentDay = yyyy + "-" + mm + "-" + dd
+  var currentDay = yyyy + '-' + mm + '-' + dd
   var hours = date.getHours()
   var minutes = date.getMinutes()
   var seconds = date.getSeconds()
   //Puts the 0 for the numbers below 2 digits
   if (hours < 10) {
-      hours = "0" + hours
+      hours = '0' + hours
   }
   if (minutes < 10) {
-      minutes = "0" + minutes
+      minutes = '0' + minutes
   }
   if (seconds < 10) {
-      seconds = "0" + seconds
+      seconds = '0' + seconds
   }
   return currentDay;
 }
@@ -372,21 +372,21 @@ var savePoints = function (userName) {
   var userRank = document.getElementById('user-rank');
  
   //validations
-  if (userName == "") {
-     alert("Debes ingresar tu nickname");
+  if (userName == '') {
+     alert('Debes ingresar tu nickname');
      return {};
   }
   if(userName.length < 3){
-    alert("El nombre debe tener mas de tres caracteres");
+    alert('El nombre debe tener mas de tres caracteres');
      return {};
   }
   if (userName.length > 12) {
-    alert("El nombre debe tener menos de doce caracteres");
+    alert('El nombre debe tener menos de doce caracteres');
      return {};
   }
   //Creating an array which will contain: username, points in game and date
   if (!localStorage.getItem('RankingPlayer')) {
-      localStorage.setItem('RankingPlayer', "[]")
+      localStorage.setItem('RankingPlayer', '[]')
   }
   var RankingPlayer = JSON.parse(localStorage.getItem('RankingPlayer'));
   RankingPlayer.push({ date: DateToday.toString(),userName: userName, points: points });
@@ -413,11 +413,11 @@ var usersPoints = function(){
     }
 );
 
-  var listHTML = "<ul>"
+  var listHTML = '<ul>'
   for (let i = 0; i < rankingPlayer.length; i++) {
-      listHTML += "<li> " + (i + 1) + '.' + '[' + rankingPlayer[i].date + ']' +'   '+ rankingPlayer[i].userName + '   ' + rankingPlayer[i].points + " </li>"
+      listHTML += '<li> ' + (i + 1) + '.' + '[' + rankingPlayer[i].date + ']' +'   '+ rankingPlayer[i].userName + '   ' + rankingPlayer[i].points + ' </li>'
   }
-  listHTML += "</ul>";
+  listHTML += '</ul>';
   return listHTML;
 }
 //Show and hide divs and put the players scores in the ranking
@@ -431,7 +431,7 @@ var formEvents = function (evt) {
   userData.className = 'display-none';
   var userRank = document.getElementById('user-rank');
   userRank.className = 'display-block';
-  document.getElementById('userName').value = "";
+  document.getElementById('userName').value = '';
   userRank.innerHTML = usersPoints();
 }
 
@@ -457,24 +457,24 @@ var showRankingDiv = function (bool, message = '') {
 // initialize game
 var init = function () {
   resetBoard();
-  var boardElement = document.getElementById("board")
-  var Pegs = boardElement.getElementsByTagName("button");
+  var boardElement = document.getElementById('board')
+  var Pegs = boardElement.getElementsByTagName('button');
   AddPegsEventHandlers(Pegs)
   var newGame = document.getElementById('reset');
   newGame.onclick = resetBoard;
-  var SaveGame = document.getElementById("save");
+  var SaveGame = document.getElementById('save');
   SaveGame.onclick = SavePegs;
-  var loadGame = document.getElementById("load");
+  var loadGame = document.getElementById('load');
   loadGame.onclick = LoadPegs;
-  var Instructions = document.getElementById("howtoplay");
+  var Instructions = document.getElementById('howtoplay');
   Instructions.onclick = ShowInstructions;
-  var Aboutt = document.getElementById("about");
+  var Aboutt = document.getElementById('about');
   Aboutt.onclick = ShowAbout;
-  var PutScore = document.getElementById("score");
-  PutScore.textContent = "SCORE" +" "+" "+" "+" "+ score;
-  var Counter = document.getElementById("pegs-remaining");
-  Counter.textContent = "PEGS" +" "+" "+" "+" "+ numberOfPegs; 
-  var High = document.getElementById("highscores");
+  var PutScore = document.getElementById('score');
+  PutScore.textContent = 'SCORE' +' '+ score;
+  var Counter = document.getElementById('pegs-remaining');
+  Counter.textContent = 'PEGS' +' '+ numberOfPegs; 
+  var High = document.getElementById('highscores');
   High.onclick = viewRanking;
 }
 
