@@ -7,6 +7,6 @@ var init = function(){
 var sendEmail = function(){
     var subj = document.getElementById("name").value;
     var msg = document.getElementById("msg").value;
-    window.open('mailto:facundosa123@gmail.com?subject='+subj+'&body='+msg);
+    window.open('mailto:facundosa123@gmail.com?subject=' + subj + '&body='+msg);
 }
 window.onload = init;

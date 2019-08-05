@@ -13,7 +13,7 @@ var createId = function (rowN, colN)
 
 //dynamic id
 var getPositionFromId = function (id) {
-  var idParts = id && id.length ? id.split('-') : []
+  var idParts = id && id.length ? id.split('-') : [];
   if (idParts.length === 3) {
     return {x: parseInt(idParts[1]),y: parseInt(idParts[2])};
   }
@@ -39,7 +39,7 @@ var generateCell = function (cell, rowN, colN) {
 var generateRow = function (row, rowN) {
   var html = '<ul>';
   for (var j = 0; j < row.length; j++) {
-    html += generateCell(row[j], rowN, j)
+    html += generateCell(row[j], rowN, j);
   }
   html += '</ul>';
   return html;
@@ -56,7 +56,7 @@ var generateBoard = function (board) {
 //non-selected peg function
 var unselectPeg = function () {
   if (selectedPeg.x !== undefined && selectedPeg.y !== undefined) {
-    var prevSelectedId = createId(selectedPeg.x, selectedPeg.y)
+    var prevSelectedId = createId(selectedPeg.x, selectedPeg.y);
     document.getElementById(prevSelectedId).className = 'peg';
   }
 }
@@ -85,24 +85,24 @@ var searchRecommendations = function(myBall){
     right:  getElement(createId(myBall.x,myBall.y+1)),
     below:  getElement(createId(myBall.x+1,myBall.y)),
     left:   getElement(createId(myBall.x,myBall.y-1))
-  }
+  };
   var possible = {
       above:  getElement(createId(myBall.x-2,myBall.y)),
       right:  getElement(createId(myBall.x,myBall.y+2)),
       below:  getElement(createId(myBall.x+2,myBall.y)),
       left:   getElement(createId(myBall.x,myBall.y-2))
-  }
+  };
   if (near.above.className === 'peg' && possible.above.className === 'hole') {
-    suggestions.push(possible.above)
+    suggestions.push(possible.above);
   }
   if (near.right.className === 'peg' && possible.right.className === 'hole') {
-    suggestions.push(possible.right)
+    suggestions.push(possible.right);
   }
   if (near.below.className === 'peg' && possible.below.className === 'hole') {
-    suggestions.push(possible.below)
+    suggestions.push(possible.below);
   }
   if (near.left.className === 'peg' && possible.left.className === 'hole') {
-    suggestions.push(possible.left)
+    suggestions.push(possible.left);
   }
   return suggestions;
 }
@@ -110,7 +110,7 @@ var searchRecommendations = function(myBall){
 //Function to count if there are any possible move
 var countRecommendations = function () {
   var ballPlaces = document.getElementsByClassName('peg');
-  var winner = document.getElementById('winner')
+  var winner = document.getElementById('winner');
   for (var i = 0; i < ballPlaces.length; i++) {
     var thisBall = getPositionFromId(ballPlaces[i].id);
     var suggestions = searchRecommendations(thisBall);
@@ -152,18 +152,18 @@ var moveBall = function (ball) {
   var winner = document.getElementById('winner');
   var counter = document.getElementById('pegs-remaining');
   document.getElementById(prevSelectedId).className = 'hole';
-  var id = getPositionFromId(ball.id)
+  var id = getPositionFromId(ball.id);
   if (id.x > selectedPeg.x) {
-    var middleBall = createId(selectedPeg.x + 1, selectedPeg.y)
+    var middleBall = createId(selectedPeg.x + 1, selectedPeg.y);
   }
   else if (id.x < selectedPeg.x) {
-    var middleBall = createId(selectedPeg.x - 1, selectedPeg.y)
+    var middleBall = createId(selectedPeg.x - 1, selectedPeg.y);
   }
   else if (id.y > selectedPeg.y) {
-    var middleBall = createId(selectedPeg.x, selectedPeg.y + 1)
+    var middleBall = createId(selectedPeg.x, selectedPeg.y + 1);
   }
   else if (id.y < selectedPeg.y) {
-    var middleBall = createId(selectedPeg.x, selectedPeg.y - 1)
+    var middleBall = createId(selectedPeg.x, selectedPeg.y - 1);
   }
   document.getElementById(middleBall).className = 'hole';
   selectedPeg.x = undefined;
@@ -217,9 +217,9 @@ var showRecommendations = function () {
 }
 var thisBall = { x: undefined, y: undefined }
 var selectPeg = function (peg) {
-var idparts = getPositionFromId(peg.id)
-selectedPeg.x = idparts.x
-selectedPeg.y = idparts.y
+var idparts = getPositionFromId(peg.id);
+selectedPeg.x = idparts.x;
+selectedPeg.y = idparts.y;
 peg.className = 'selected';
 showRecommendations(); 
 }
@@ -308,7 +308,7 @@ var showInstructions = function(){
 // HighScores
 var viewRanking = function(){
   var rankingDiv = getElement('ranking');
-  rankingDiv.className = 'diplay-block'
+  rankingDiv.className = 'diplay-block';
   var header = getElement('ranking-header');
   header.innerText = 'RANKING';
   var userData = getElement('user-data');
@@ -330,36 +330,36 @@ var showAbout = function(){
 var closeRankingDiv = function(){
    var rankingDiv = getElement('ranking');
    rankingDiv.className = 'display-none';
-   var ListPlayers = getElement('user-rank')
+   var ListPlayers = getElement('user-rank');
    ListPlayers.className = 'display-none';
 }
 
 //Function to get date
 function getDate() {
-  var date = new Date()
-  var yyyy = date.getFullYear()
-  var dd = date.getDate()
-  var mm = (date.getMonth() + 1)
+  var date = new Date();
+  var yyyy = date.getFullYear();
+  var dd = date.getDate();
+  var mm = (date.getMonth() + 1);
   //Puts the 0 for the numbers below 2 digits
   if (dd < 10) {
-      dd = '0' + dd
+      dd = '0' + dd;
   }
   if (mm < 10) {
-      mm = '0' + mm
+      mm = '0' + mm;
   }
   var currentDay = yyyy + '-' + mm + '-' + dd
-  var hours = date.getHours()
-  var minutes = date.getMinutes()
-  var seconds = date.getSeconds()
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();
   //Puts the 0 for the numbers below 2 digits
   if (hours < 10) {
-      hours = '0' + hours
+      hours = '0' + hours;
   }
   if (minutes < 10) {
-      minutes = '0' + minutes
+      minutes = '0' + minutes;
   }
   if (seconds < 10) {
-      seconds = '0' + seconds
+      seconds = '0' + seconds;
   }
   return currentDay;
 }
@@ -385,7 +385,7 @@ var savePoints = function (userName) {
   }
   //Creating an array which will contain: username, points in game and date
   if (!localStorage.getItem('RankingPlayer')) {
-      localStorage.setItem('RankingPlayer', '[]')
+      localStorage.setItem('RankingPlayer', '[]');
   }
   var RankingPlayer = JSON.parse(localStorage.getItem('RankingPlayer'));
   RankingPlayer.push({ date: dateToday.toString(),userName: userName, points: points });
@@ -414,7 +414,8 @@ var usersPoints = function(){
 
   var listHTML = '<ul>'
   for (let i = 0; i < rankingPlayer.length; i++) {
-      listHTML += '<li> ' + (i + 1) + '.' + '[' + rankingPlayer[i].date + ']' +'   '+ rankingPlayer[i].userName + '   ' + rankingPlayer[i].points + ' </li>'
+      listHTML += '<li> ' + (i + 1) + '.' + '[' + rankingPlayer[i].date + ']' +'   '+
+       rankingPlayer[i].userName + '   ' + rankingPlayer[i].points + ' </li>';
   }
   listHTML += '</ul>';
   return listHTML;
@@ -456,7 +457,7 @@ var showRankingDiv = function (bool, message = '') {
 // initialize game
 var init = function () {
   resetBoard();
-  var boardElement = document.getElementById('board')
+  var boardElement = document.getElementById('board');
   var pegs = boardElement.getElementsByTagName('button');
   addPegsEventHandlers(pegs)
   var newGame = document.getElementById('reset');
