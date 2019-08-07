@@ -300,10 +300,10 @@ var LoadPegs = function () {
  }
 
  // Instructions
-var showInstructions = function(){
+/*var showInstructions = function(){
   document.location.target ='_blank';
   document.location.href = 'game-instructions.html';
-}
+}*/
 
 // HighScores
 var viewRanking = function(){
@@ -321,10 +321,11 @@ var viewRanking = function(){
 } 
 
 //Show About
+/*
 var showAbout = function(){
   document.location.target ='_blank';
   document.location.href = 'show-about.html';
-}
+}*/
 
 // Show Higscores and names
 var closeRankingDiv = function(){
@@ -466,10 +467,10 @@ var init = function () {
   saveGame.onclick = savePegs;
   var loadGame = document.getElementById('load');
   loadGame.onclick = LoadPegs;
-  var instructions = document.getElementById('howtoplay');
-  instructions.onclick = showInstructions;
-  var aboutt = document.getElementById('about');
-  aboutt.onclick = showAbout;
+  /*var instructions = document.getElementById('howtoplay');
+  instructions.onclick = showInstructions;*/
+  /*var aboutt = document.getElementById('about');
+  aboutt.onclick = showAbout;*/
   var putScore = document.getElementById('score');
   putScore.textContent = 'SCORE' +' '+ score;
   var counter = document.getElementById('pegs-remaining');
