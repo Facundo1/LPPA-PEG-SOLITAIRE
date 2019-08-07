@@ -1,59 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Peg Solitaire Game</title>
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/medias.css">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="icon" type="image/png" href="assets/icon.png" />
-  <script type="text/javascript" src="js/app.js"></script>
-</head>
-<body>
-  <div id="verticalmenu">
-    <input id="chec" type="checkbox" >
-    <label for="chec"><img src="assets/menu.jpg"></label>
-    <div id="sidebar">
-      <ul>
-        <li><button id="reset">RESET</button></li>
-        <li><button id="save">SAVE</button></li>
-        <li><button id="load">LOAD</button></li>
-        <li><a id="howtoplay" href="game-instructions.html">INSTRUCTIONS</a></li>
-        <li><button id="highscores">HIGHSCORES</button></li>
-        <li><a id="about" href="show-about.html">CONTACT</a></li>
-      </ul>
-    </div>
-  </div>
-  <div id="container">
-    <div id="header">
-      <h1 id="winner"><b>PEG SOLITAIRE</b></h1>
-    </div>
-    <div id="board">
-    </div>
-    <div id="showscores">
-      <h3 id="score">SCORE</h3>
-      <h3 id="pegs-remaining">PEGS</h3>
-    </div>
-    <div id="ranking" class="display-none">
-      <div class="close-ranking">
-        <button id="close-ranking-button">X</button>
-      </div>
-      <h3 id="ranking-header">HEADER</h3>
-      <div id="user-data" class="display-block">
-        <form id="user-form" class="display-block">
-          <label id = "nickuser" for="username">NICKNAME:</label>
-          <input id="userName" type="text" >
-        </form>
-        <button id="submit">Save!</button>
-      </div>
-      <div id="user-rank" class="display-none">
-        aqui el ranking
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Peg Solitaire Game</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/medias.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+    <script type="text/javascript" src="js/app.js"></script>
+  </head>
+  <body>
+    <div id="verticalmenu">
+      <input id="chec" type="checkbox" >
+      <label for="chec"><img src="assets/menu.jpg"></label>
+      <div id="sidebar">
+        <ul>
+          <li><button id="reset">RESET</button></li>
+          <li><button id="save">SAVE</button></li>
+          <li><button id="load">LOAD</button></li>
+          <li><a id="howtoplay" href="game-instructions.html">INSTRUCTIONS</a></li>
+          <li><button id="highscores">HIGHSCORES</button></li>
+          <li><a id="about" href="show-about.html">CONTACT</a></li>
+        </ul>
       </div>
     </div>
-    <div id="footer">
+    <div id="container">
+      <div id="header">
+        <h1 id="winner"><b>PEG SOLITAIRE</b></h1>
+      </div>
+      <div id="board">
+      </div>
+      <div id="showscores">
+        <h3 id="score">SCORE</h3>
+        <h3 id="pegs-remaining">PEGS</h3>
+      </div>
+      <div id="ranking" class="display-none">
+        <div class="close-ranking">
+          <button id="close-ranking-button">X</button>
+        </div>
+        <h3 id="ranking-header">HEADER</h3>
+        <div id="user-data" class="display-block">
+          <form id="user-form" class="display-block">
+            <label id = "nickuser" for="username">NICKNAME:</label>
+            <input id="userName" type="text" >
+          </form>
+          <button id="submit">Save!</button>
+        </div>
+        <div id="user-rank" class="display-none">
+          aqui el ranking
+        </div>
+      </div>
+      <div id="footer">
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>
