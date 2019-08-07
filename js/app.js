@@ -5,13 +5,13 @@ var numberOfPegs;
 //Object of Peg
 var selectedPeg = { x: undefined, y: undefined };
 
-//creation of pegs 
+//Creation of pegs 
 var createId = function (rowN, colN) 
 {
   return 'peg-' + rowN + '-' + colN;
 }
 
-//dynamic id
+//Dynamic id
 var getPositionFromId = function (id) {
   var idParts = id && id.length ? id.split('-') : [];
   if (idParts.length === 3) {
@@ -53,7 +53,7 @@ var generateBoard = function (board) {
   return html;
 }
 
-//non-selected peg function
+//Non-selected peg function
 var unselectPeg = function () {
   if (selectedPeg.x !== undefined && selectedPeg.y !== undefined) {
     var prevSelectedId = createId(selectedPeg.x, selectedPeg.y);
@@ -61,7 +61,7 @@ var unselectPeg = function () {
   }
 }
 
-// function to return a specify element
+// Function to return a specify element
 var getElement = function (id) {
   var element = document.getElementById(id);
   return element || {};
@@ -168,14 +168,10 @@ var moveBall = function (ball) {
   document.getElementById(middleBall).className = 'hole';
   selectedPeg.x = undefined;
   selectedPeg.y = undefined;
-  // Score and peg counter
   score += 100;
   refreshScore.textContent = 'SCORE' +'  '+ score;
   numberOfPegs = numberOfPegs - 1;
   counter.textContent = 'PEGS' +'  '+ numberOfPegs; 
-  //currentScore = score;
-  //currentPegs = numberOfPegs;
-
   if (numberOfPegs === 1) {
     if (id.x == 3 && id.y == 3){
       winner.textContent = 'YOU WON THE GAME';
@@ -188,7 +184,7 @@ var moveBall = function (ball) {
   }
 }
 
-// posibbles movements and Count possibles movements
+// Posibbles movements and Count possibles movements
 var showRecommendations = function () {
   var near = {
     above: getElement(createId(selectedPeg.x - 1, selectedPeg.y)),
@@ -233,9 +229,9 @@ var addPegsEventHandlers = function (pegs) {
 
 //MENU
 
-//reset
+//Reset
 var resetBoard = function () {
- //initializing array that represents a board
+ //Initializing array that represents a board
 var board = [
   [, , { value: 1 }, { value: 1 }, { value: 1 }, ,,],
   [, , { value: 1 }, { value: 1 }, { value: 1 }, ,,],
@@ -259,13 +255,12 @@ var board = [
   winner.textContent = 'PEG SOLITAIRE';
 }
 
-//Save game
+//Save the game
 var boardValues = function () {
   var currentBoard = [];
   var myBoard = document.getElementById('board');
   var myUls = myBoard.getElementsByTagName('ul');
- 
-  for (var i = 0; i < myUls.length; i++) {
+   for (var i = 0; i < myUls.length; i++) {
     var myUl = [];
     var myButtons = myUls[i].getElementsByTagName('button');
     for (var j = 0; j < myButtons.length; j++) {
@@ -299,12 +294,6 @@ var LoadPegs = function () {
   addPegsEventHandlers(balls);
  }
 
- // Instructions
-/*var showInstructions = function(){
-  document.location.target ='_blank';
-  document.location.href = 'game-instructions.html';
-}*/
-
 // HighScores
 var viewRanking = function(){
   var rankingDiv = getElement('ranking');
@@ -319,13 +308,6 @@ var viewRanking = function(){
   close.onclick = closeRankingDiv;
   userRank.innerHTML = usersPoints();
 } 
-
-//Show About
-/*
-var showAbout = function(){
-  document.location.target ='_blank';
-  document.location.href = 'show-about.html';
-}*/
 
 // Show Higscores and names
 var closeRankingDiv = function(){
@@ -370,8 +352,7 @@ var savePoints = function (userName) {
   var points = score;
   var dateToday = getDate();
   var userRank = document.getElementById('user-rank');
- 
-  //validations
+   //Validations
   if (userName == '') {
      alert('Debes ingresar tu nickname');
      return {};
@@ -400,7 +381,6 @@ var usersPoints = function(){
   //Getting the array wich will represent the ranking of players
   localStorage.getItem('RankingPlayer');
   var rankingPlayer = JSON.parse(localStorage.getItem('RankingPlayer'));
-
   rankingPlayer.sort(
     function (a, b) {
         if (a.points > b.points) {
@@ -412,7 +392,6 @@ var usersPoints = function(){
         return 0;
     }
 );
-
   var listHTML = '<ul>'
   for (let i = 0; i < rankingPlayer.length; i++) {
       listHTML += '<li> ' + (i + 1) + '.' + '[' + rankingPlayer[i].date + ']' +'   '+
@@ -439,23 +418,23 @@ var formEvents = function (evt) {
 //Show and hide divs
 var showRankingDiv = function (bool, message = '') {
   var close = getElement('close-ranking-button');
-    close.onclick = closeRankingDiv;
-    var rankingDiv = getElement('ranking');
-    var userData = getElement('user-data');
-   
-    var header = getElement('ranking-header');
-    header.innerText = message;
-    if (bool) {
-        userData.className = 'display-block';
-        rankingDiv.className = 'display-block';
-        var submit = document.getElementById('submit');
-        submit.onclick = formEvents;
-    } else {
-        rankingDiv.className = 'display-none';
-    }
+  close.onclick = closeRankingDiv;
+  var rankingDiv = getElement('ranking');
+  var userData = getElement('user-data');
+  var header = getElement('ranking-header');
+  header.innerText = message;
+  if (bool) {
+    userData.className = 'display-block';
+    rankingDiv.className = 'display-block';
+    var submit = document.getElementById('submit');
+    submit.onclick = formEvents;
+  } 
+  else {
+    rankingDiv.className = 'display-none';
+  }
 }
 
-// initialize game
+// Initialize game
 var init = function () {
   resetBoard();
   var boardElement = document.getElementById('board');
@@ -467,10 +446,6 @@ var init = function () {
   saveGame.onclick = savePegs;
   var loadGame = document.getElementById('load');
   loadGame.onclick = LoadPegs;
-  /*var instructions = document.getElementById('howtoplay');
-  instructions.onclick = showInstructions;*/
-  /*var aboutt = document.getElementById('about');
-  aboutt.onclick = showAbout;*/
   var putScore = document.getElementById('score');
   putScore.textContent = 'SCORE' +' '+ score;
   var counter = document.getElementById('pegs-remaining');
@@ -478,5 +453,5 @@ var init = function () {
   var high = document.getElementById('highscores');
   high.onclick = viewRanking;
 }
-
+// Load of the document
 window.onload = init;
