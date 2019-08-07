@@ -1,18 +1,26 @@
 body {
     background-image: url(../assets/background.jpg);
 }
-    
+
+#content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100%;
+}
+
 h1 {
-    text-align: center; 
+    text-align: center;
     color: rgb(87, 49, 0);
     text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
     font: 90px 'ChunkFiveRegular';
     border: 4px solid;
     border-radius: 50%;
 }
-    
+
 p {
-    text-align: center; 
+    text-align: center;
     color: rgb(87, 49, 0);
     text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
     font: 50px 'ChunkFiveRegular';
@@ -20,16 +28,10 @@ p {
 }
 
 a {
-    text-align: center; 
+    text-align: center;
     color: rgb(160, 93, 5);
     text-shadow: 0px 1px 0px rgb(160, 93, 5), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
-    font: 50px 'ChunkFiveRegular';     
-}
-
-#contact-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font: 50px 'ChunkFiveRegular';
 }
 
 #contact-header {
@@ -52,7 +54,7 @@ a {
 }
 
 #name::placeholder {
-    color: #0000003b ;
+    color: #0000003b;
 }
 
 #email {
@@ -81,24 +83,20 @@ a {
 
 #buttonsubmit {
     margin: 10px;
-    color: rgb(87, 49 , 0);
+    color: rgb(87, 49, 0);
     display: flex;
     text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
     font: 50px 'ChunkFiveRegular';
     padding: 10px;
     font-weight: 600;
     background-color: transparent;
-}   
-    
+}
+
 #footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 160px;
     height: 30px;
 }
-
-
-
-
