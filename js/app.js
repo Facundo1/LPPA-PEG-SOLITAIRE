@@ -452,7 +452,7 @@ var init = function () {
   counter.textContent = 'PEGS' +' '+ numberOfPegs; 
   var high = document.getElementById('highscores');
   high.onclick = viewRanking;
-  localStorage.clear();
+  //localStorage.clear();
 }
 // Load of the document
 window.onload = init;
