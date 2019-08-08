@@ -47,8 +47,8 @@ label {
     width: 100%;
     height: 100%;
     margin-top: 100px;
-    background-color: rgba(0, 0, 0, 0.753);
     border: 2px solid black;   
+    background-color: rgba(0, 0, 0, 0.753);
 }
     
 ul {
@@ -58,10 +58,10 @@ ul {
 li button {
     display: block;
     padding: 10px;
-    background-color: transparent;
     border-radius: 6px;
     border: none;
-    color:rgb(255, 145, 2);
+    background-color: transparent;
+    color: rgb(255, 145, 2);
     text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
     font: 80px 'ChunkFiveRegular';
     font-weight: 600;
@@ -71,10 +71,10 @@ li button {
 li button:hover {
     display: block;
     padding: 20px;
-    background-color: transparent;
     border-radius: 6px;
     border: none;
-    color:rgb(255, 145, 0);;
+    background-color: transparent;
+    color: rgb(255, 145, 0);;
     text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
     font: 80px 'ChunkFiveRegular';
     font-weight: 600;
@@ -84,10 +84,10 @@ li button:hover {
 li a {
     display: block;
     padding: 10px;
-    background-color: transparent;
     border-radius: 6px;
     border: none;
-    color:rgb(255, 145, 2);
+    background-color: transparent;
+    color: rgb(255, 145, 2);
     text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
     font: 80px 'ChunkFiveRegular';
     font-weight: 600;
@@ -98,10 +98,10 @@ li a {
 li a:hover {
     display: block;
     padding: 20px;
-    background-color: transparent;
     border-radius: 6px;
     border: none;
-    color:rgb(255, 145, 0);;
+    background-color: transparent;
+    color: rgb(255, 145, 0);;
     text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
     font: 80px 'ChunkFiveRegular';
     font-weight: 600;
@@ -162,9 +162,9 @@ li a:hover {
 }
 
 #board button.peg {
-    background-color: #814501;
     border: 2px solid #4e2a01;
     border-radius: 50px;
+    background-color: #814501;
     box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65) 
 }
 
@@ -177,9 +177,9 @@ li a:hover {
 }
 
 #board button.hole {
-    background-color: #333333;
-    border-radius: 50px;
     border: 2px solid #422300;
+    border-radius: 50px;
+    background-color: #333333;
     box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65) 
 }
 
@@ -188,9 +188,9 @@ li a:hover {
 }
 
 #board button.selected {
-    background-color: #271801;
     border: 2px solid #976e2d;
     border-radius: 50px;
+    background-color: #271801;
     box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65) 
 }
 
@@ -199,8 +199,8 @@ li a:hover {
 }
 
 #board button.suggestion {
-    background-color: rgb(122, 21, 21);
     border: 2px solid #5f1414;
+    background-color: rgb(122, 21, 21);
     box-shadow: 2px 0px 3px 1px rgba(0, 0, 0, 0.65) 
 }
 
