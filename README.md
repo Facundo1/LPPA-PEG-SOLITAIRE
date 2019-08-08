@@ -4,6 +4,6 @@ The game is known simply as Solitaire in the United Kingdom where the card games
 It is also referred to as Brainvita (especially in India).
 The objetive is simple, get eat all pegs through moving pegs.
 
-TRY IT YOURSELF:
+ENJOY THE GAME!
 
 [Play](https://facundo1.github.io/LPPA-PEG-SOLITAIRE/)
