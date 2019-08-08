@@ -11,20 +11,20 @@ body {
 }
 
 h1 {
+    border: 4px solid;
+    border-radius: 50%;
     text-align: center;
     color: rgb(87, 49, 0);
     text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
     font: 90px 'ChunkFiveRegular';
-    border: 4px solid;
-    border-radius: 50%;
 }
 
 p {
+    margin: 10px;
     text-align: center;
     color: rgb(87, 49, 0);
     text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
     font: 50px 'ChunkFiveRegular';
-    margin: 10px;
 }
 
 a {
@@ -48,9 +48,9 @@ a {
 }
 
 #name {
+    border-radius: 6px;
     font-size: x-large;
     font-weight: 800;
-    border-radius: 6px;
 }
 
 #name::placeholder {
@@ -58,10 +58,10 @@ a {
 }
 
 #email {
-    font-size: x-large;
-    font-weight: 800;
     margin-top: 10px;
     border-radius: 6px;
+    font-size: x-large;
+    font-weight: 800;
 }
 
 #email::placeholder {
@@ -69,12 +69,12 @@ a {
 }
 
 #msg {
-    font-size: x-large;
-    font-weight: 800;
     margin-top: 10px;
     width: 98%;
     height: 110px;
     border-radius: 6px;
+    font-size: x-large;
+    font-weight: 800;
 }
 
 #msg::placeholder {
@@ -82,14 +82,14 @@ a {
 }
 
 #buttonsubmit {
-    margin: 10px;
-    color: rgb(87, 49, 0);
     display: flex;
+    margin: 10px;
+    padding: 10px;
+    background-color: transparent;
+    color: rgb(87, 49, 0);
     text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
     font: 50px 'ChunkFiveRegular';
-    padding: 10px;
     font-weight: 600;
-    background-color: transparent;
 }
 
 #footer {
@@ -97,6 +97,6 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 160px;
     height: 30px;
+    margin-top: 160px;
 }

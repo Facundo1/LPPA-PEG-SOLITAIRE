@@ -27,15 +27,15 @@ img {
 }
 
 label img {
-    padding: 15px;
     position: absolute;
+    padding: 15px;   
 }
     
 label img:hover {
-    padding: 15px;
     position: absolute;
     width: 50px;
     height: 50px;
+    padding: 15px;    
 }
     
 label {
@@ -44,11 +44,11 @@ label {
 
 #sidebar {
     display: none;
-    margin-top: 100px;
-    background-color: rgba(0, 0, 0, 0.753);
-    border: 2px solid black;
     width: 100%;
     height: 100%;
+    margin-top: 100px;
+    background-color: rgba(0, 0, 0, 0.753);
+    border: 2px solid black;   
 }
     
 ul {
@@ -56,60 +56,56 @@ ul {
 }  
     
 li button {
-    color:rgb(255, 145, 2);
     display: block;
-    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
-    font: 80px 'ChunkFiveRegular';
     padding: 10px;
-    font-weight: 600;
-    font-size: 45px;
-    color:rgb(255, 145, 0);;
     background-color: transparent;
     border-radius: 6px;
     border: none;
+    color:rgb(255, 145, 2);
+    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
+    font: 80px 'ChunkFiveRegular';
+    font-weight: 600;
+    font-size: 45px;
 }
     
 li button:hover {
-    color:rgb(255, 145, 0);
     display: block;
-    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
-    font: 80px 'ChunkFiveRegular';
     padding: 20px;
-    font-weight: 600;
-    font-size: 55px;
-    color:rgb(255, 145, 0);;
     background-color: transparent;
     border-radius: 6px;
     border: none;
+    color:rgb(255, 145, 0);;
+    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
+    font: 80px 'ChunkFiveRegular';
+    font-weight: 600;
+    font-size: 55px;
 }
 
 li a {
-    color:rgb(255, 145, 0);
     display: block;
-    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
-    font: 80px 'ChunkFiveRegular';
     padding: 10px;
-    font-weight: 600;
-    font-size: 45px;
-    color:rgb(255, 145, 0);
     background-color: transparent;
     border-radius: 6px;
     border: none;
+    color:rgb(255, 145, 2);
+    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
+    font: 80px 'ChunkFiveRegular';
+    font-weight: 600;
+    font-size: 45px;
     text-decoration: none;
 }
     
 li a:hover {
-    color:rgb(255, 145, 0);
     display: block;
-    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
-    font: 80px 'ChunkFiveRegular';
     padding: 20px;
-    font-weight: 600;
-    font-size: 55px;
-    color:rgb(255, 145, 0);
     background-color: transparent;
     border-radius: 6px;
     border: none;
+    color:rgb(255, 145, 0);;
+    text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #000000;
+    font: 80px 'ChunkFiveRegular';
+    font-weight: 600;
+    font-size: 55px;
 }
 
 #container {
@@ -148,15 +144,15 @@ li a:hover {
 }
 
 #board {
-    border-radius: 5px;
     padding: 1vw;
     margin-top: -1vh;
+    border-radius: 5px;
 }
 
 #board button {
-    width: 3vw;
-    height: 3vw;
     margin: 1vw;
+    height: 3vw;
+    width: 3vw;
     border: 1px solid #999;
     border-radius: 50px;
 }
@@ -209,10 +205,10 @@ li a:hover {
 }
 
 #score {
+    margin-right: 20px;
     color: rgb(87, 49, 0);
     text-shadow: 0px 1px 0px rgb(63, 36, 0), 0px 2px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 3px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 4px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 5px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 6px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 7px 0px rgb(63, 36, 0), 0px 2px 0px, 0px 8px 7px #001135;
     font: 40px 'ChunkFiveRegular';
-    margin-right: 20px;
 }
 
 #pegs-remaining {
@@ -222,14 +218,14 @@ li a:hover {
 }
 
 #ranking {
-    text-align: center;
     position: fixed;
-    top:5%;
-    left: 40%;
-    width: 40%;
+    padding: 10px;
     margin-left: -10%;
-    padding:10px;
+    width: 40%;
+    top: 5%;
+    left: 40%;
     background-image: url(../assets/background.jpg);
+    text-align: center;
 }
 
 .display-block {
@@ -245,16 +241,16 @@ li a:hover {
 }
 
 #close-ranking-button {
-    color: rgb(255, 255, 255);
+    padding: 2px 20px 2px 20px;
     background: rgba(70, 46, 1, 0.986);
     border: 2px solid rgb(0, 0, 0);
-    padding: 2px 20px 2px 20px;
+    color: rgb(255, 255, 255);
 }
 
 #user-rank {
+    margin-top: 10px;
     height: 500px;
     background-image: url(../assets/background.jpg);
-    margin-top: 10px;
     border: 5px solid #271801;
 }
 
@@ -263,7 +259,7 @@ li a:hover {
 }
 
 #user-rank ul li {
-    padding:5px;
+    padding: 5px;
     background: #fff;
     font-size: x-large;
     font-weight: bold;
@@ -274,10 +270,10 @@ li a:hover {
 }
 
 #userForm {
-    text-align: center;
     padding: 10px;
     width: auto;
-    margin:0 auto;
+    margin: 0 auto;
+    text-align: center;
 }
 
 #nickuser {
@@ -286,10 +282,10 @@ li a:hover {
 }
 
 #submit {
-    width: 60%;
-    margin: 5px;
-    background: #3d330d;
     padding: 5px;
+    margin: 5px;
+    width: 60%;
+    background: #3d330d;
     border-radius: 5px;
     border: 0px;
     color: #fff;
