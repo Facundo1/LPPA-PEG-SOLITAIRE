@@ -1,7 +1,7 @@
 //Open Email Client
 var init = function(){
-    var submit = document.getElementById("buttonsubmit");
-    submit.onclick = sendEmail;
+    var form = document.getElementById("form");
+    form.onsubmit = sendEmail;
 }
 // Function to put the parts of an email with addressee,subject and body
 var sendEmail = function(){
